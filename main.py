@@ -1,13 +1,17 @@
 from fastapi import FastAPI
-from routes import auth_routes, admin_routes
+from database.database import Base, engine
+from routes import auth_routes, admin_routes, customer_routes, factory_routes
 
-app = FastAPI(title="B2B Platform")
+app = FastAPI()
 
-# Routers
-app.include_router(auth_routes.router, prefix="/auth", tags=["auth"])
-app.include_router(admin_routes.router, prefix="/admin", tags=["admin"])
+# Create tables if they don’t exist
+Base.metadata.create_all(bind=engine)
 
+app.include_router(auth_routes.router)
+app.include_router(admin_routes.router)
+app.include_router(customer_routes.router)
+app.include_router(factory_routes.router)
 
 @app.get("/")
 def home():
-    return {"message": "Welcome to B2B Platform"}
+    return {"msg": "Welcome to B2B Platform"}
