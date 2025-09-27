@@ -7,7 +7,7 @@ from schemas import UserCreate, UserResponse, Token
 from utils.utils import hash_password, verify_password, create_access_token, decode_token
 from jose import JWTError, jwt
 
-router = APIRouter(prefix="/auth", tags=["Auth"])
+router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 # Signup

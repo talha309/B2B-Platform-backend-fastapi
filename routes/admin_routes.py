@@ -5,7 +5,7 @@ from models.models import RFQ
 from schemas import RFQUpdate, RFQResponse
 from .auth_routes import admin_required
 
-router = APIRouter(prefix="/admin", tags=["Admin"])
+router = APIRouter()
 
 # Get all RFQs
 @router.get("/rfqs", response_model=list[RFQResponse])
