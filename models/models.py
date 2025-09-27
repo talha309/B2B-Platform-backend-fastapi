@@ -3,6 +3,11 @@ from sqlalchemy.orm import relationship
 from database.database import Base
 import enum
 
+class UserRole(str, enum.Enum):
+    admin = "admin"
+    factory = "factory"
+    customer = "customer"
+    
 class User(Base):
     __tablename__ = "users"
     id = Column(Integer, primary_key=True, index=True)
