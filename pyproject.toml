@@ -1,0 +1,18 @@
+[project]
+name = "backend-fastapi"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "alembic>=1.16.5",
+    "fastapi[all]>=0.117.1",
+    "langchain>=0.3.27",
+    "langgraph>=0.6.7",
+    "openai-agents>=0.3.2",
+    "pydantic>=2.11.9",
+    "python-dotenv>=1.1.1",
+    "python-jose>=3.5.0",
+    "sqlalchemy>=2.0.43",
+    "uvicorn[standard]>=0.37.0",
+]
